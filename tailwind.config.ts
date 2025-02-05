@@ -34,10 +34,10 @@ const config: Config = {
           DEFAULT: "#FB5454",
         },
         body: "#64748B",
-        bodydark: "#AEB7C0",
+        bodydark: "#b88e2f",
         bodydark1: "#DEE4EE",
-        bodydark2: "#8A99AF",
-        primary: "#3C50E0",
+        bodydark2: "#b88e2f",
+        primary: "#b88e2f",
         secondary: "#80CAEE",
         stroke: "#E2E8F0",
         gray: {

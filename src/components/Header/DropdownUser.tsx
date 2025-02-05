@@ -2,6 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ClickOutside from "@/components/ClickOutside";
+import Hunain from "../../../public/images/user/hunain1.jpg"
 
 const DropdownUser = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -15,24 +16,26 @@ const DropdownUser = () => {
       >
         <span className="hidden text-right lg:block">
           <span className="block text-sm font-medium text-black dark:text-white">
-            Thomas Anree
+            Malik Hunain
           </span>
           <span className="block text-xs">UX Designer</span>
         </span>
 
-        <span className="h-12 w-12 rounded-full">
+        <span className="h-12 w-12 rounded-ful">
           <Image
             width={112}
             height={112}
-            src={"/images/user/user-01.png"}
+            src={Hunain}
             style={{
               width: "auto",
               height: "auto",
             }}
             alt="User"
+            className="bg-white dark:bg-black"
           />
         </span>
 
+        
         <svg
           className="hidden fill-current sm:block"
           width="12"
