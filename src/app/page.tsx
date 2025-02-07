@@ -1,19 +1,24 @@
+"use client";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import ECommerce from "@/components/Dashboard/E-commerce";
-import { Metadata } from "next";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 
-export const metadata: Metadata = {
-  title: "Admin Pannel",
-  description:
-    "This is Next.js Settings page for Malik Hunain - Next.js Tailwind CSS Admin Dashboard Template",
-};
-
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    // Check authentication status
+    const authToken = localStorage.getItem("authToken");
+    if (!authToken) {
+      router.push("/auth/signin");
+    }
+  }, []);
+
   return (
-    <>
-      <DefaultLayout>
-        <ECommerce />
-      </DefaultLayout>
-    </>
+    <DefaultLayout>
+      <ECommerce />
+    </DefaultLayout>
   );
 }

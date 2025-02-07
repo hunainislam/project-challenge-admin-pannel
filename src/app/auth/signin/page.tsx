@@ -1,17 +1,24 @@
+"use client"
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from 'next/navigation';
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-import { Metadata } from "next";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 
-export const metadata: Metadata = {
-  title: "Admin Pannel",
-  description:
-    "This is Next.js Settings page for Malik Hunain - Next.js Tailwind CSS Admin Dashboard Template",
-};
 
 const SignIn: React.FC = () => {
+  const router = useRouter();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    // Add your authentication logic here
+    const fakeAuthToken = 'dummy-token';
+    
+    localStorage.setItem('authToken', fakeAuthToken);
+    router.push('/');
+  }
   return (
     <DefaultLayout>
       <Breadcrumb pageName="Sign In" />
@@ -181,7 +188,7 @@ const SignIn: React.FC = () => {
                 Sign In to Funiro
               </h2>
 
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                   <label className="mb-2.5 block font-medium text-black dark:text-white">
                     Email
